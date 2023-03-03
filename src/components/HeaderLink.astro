@@ -1,24 +1,37 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
+import type { HTMLAttributes } from "astro/types"
+import { Icon } from "astro-icon"
 
-type Props = HTMLAttributes<'a'>;
+type Props = HTMLAttributes<"a"> & {
+  isExternal?: boolean
+}
 
-const { href, class: className, ...props } = Astro.props;
+const { href, isExternal, class: className, ...props } = Astro.props
 
-const { pathname } = Astro.url;
-const isActive = href === pathname || href === pathname.replace(/\/$/, '');
+const { pathname } = Astro.url
+const isActive = href === pathname || href === pathname.replace(/\/$/, "")
 ---
 
-<a href={href} class:list={[className, { active: isActive }]} {...props}>
-	<slot />
+<a
+  href={href}
+  class:list={[
+    className,
+    "flex items-center text-accent hover:underline",
+    { active: isActive },
+  ]}
+  {...props}
+>
+  <slot />
+  {isExternal && <Icon class="" name="ri:external-link-fill" size={15} />}
 </a>
+
 <style>
-	a {
-		display: inline-block;
-		text-decoration: none;
-	}
-	a.active {
-		font-weight: bolder;
-		text-decoration: underline;
-	}
+  a {
+    display: inline-block;
+    text-decoration: none;
+  }
+  a.active {
+    font-weight: bolder;
+    text-decoration: underline;
+  }
 </style>

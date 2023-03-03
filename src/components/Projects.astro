@@ -1,0 +1,21 @@
+---
+import { getCollection } from "astro:content";
+import Project from "./Project.astro"
+
+const projects = await getCollection("projects")
+---
+
+<ul class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-x-3 gap-y-4">
+  {
+    projects.map((project) => {
+      return (
+        <Project
+          title={project.data.title}
+          link={project.data.link}
+          technologies={project.data.technologies}
+          body={project.body}
+        />
+      )
+    })
+  }
+</ul>

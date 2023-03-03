@@ -1,0 +1,24 @@
+---
+type Props = {
+  title: string
+  technologies: string
+  body: string
+  link: string
+}
+
+const { title, technologies, body, link } = Astro.props
+---
+
+<li
+  class="p-5 border shadow border-primary/20 rounded-lg bg-base-300 cursor-pointer hover:scale-105 hover:border-accent/70 ease-out transition-transform group"
+>
+  <a href={link} class="flex flex-col justify-between h-full" target="_blank">
+    <div>
+      <h3 class="text-primary group-hover:text-accent font-semibold text-xl">
+        {title}
+      </h3>
+      <p class="text-sm mt-1">{body}</p>
+    </div>
+    <div class="text-sm mt-4">{technologies}</div>
+  </a>
+</li>
