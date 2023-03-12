@@ -8,12 +8,13 @@ type Props = {
   link: string
   img_href: string
 }
-const { title, technologies, body, link, img_href } = Astro.props
 
-const props = await getImage({
-  src: import(`../assets/${img_href}.png`),
+const props = Astro.props
+
+const imageProps = await getImage({
+  src: import(`../assets/${props.img_href}.png`),
   format: "webp",
-  alt: `${title} showcase`,
+  alt: `${props.title} showcase`,
   width: 700,
 })
 ---
@@ -21,22 +22,21 @@ const props = await getImage({
 <li
   class="shadow-lg border-primary/20 bg-base-200 rounded-2xl cursor-pointer  hover:border-accent/50 ease-out transition-transform group overflow-hidden"
 >
-  <a href={link} class="flex space-x-5" target="_blank">
-    <img {...props} class="w-full max-w-[14rem] object-cover rounded-md" />
-
+  <a href={props.link} class="flex space-x-5" target="_blank">
+    <img {...imageProps} class="w-full max-w-[14rem] object-cover rounded-md" />
     <section class="w-full p-6">
       <div class="flex flex-col h-full justify-between">
         <div>
-          <h3 class="group-hover:text-accent font-bold uppercase text-xl">
-            {title}
+          <h3 class="group-hover:text-accent font-semibold uppercase text-xl">
+            {props.title}
           </h3>
           <p class="text-base-content/80 text-sm mt-2 text-justify leading-relaxed">
-            {body}
+            {props.body}
           </p>
         </div>
         <div class="mt-5 flex flex-wrap font-medium space-x-2">
           {
-            technologies.map((technology) => {
+            props.technologies.map((technology) => {
               return (
                 <span class="badge badge-primary badge-outline group-hover:text-accent group-hover:font-medium">
                   {technology}

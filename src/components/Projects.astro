@@ -5,9 +5,10 @@ import { getCollection } from "astro:content"
 const projects = await getCollection("projects")
 ---
 
+<h2 class="text-2xl font-bold mt-7">Things I've built</h2>
 <ul class="mt-4 space-y-6">
   {
-    projects.map(({ data, body }) => {
+    projects?.map(({ data, body }) => {
       return (
         <Project
           title={data.title}

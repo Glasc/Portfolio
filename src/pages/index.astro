@@ -1,33 +1,14 @@
 ---
-import "../styles/global.css"
-import Header from "../components/Header.astro"
-import Layout from "../Layout.astro"
-import Projects from "../components/Projects.astro"
-import { SITE_TITLE } from "../consts"
+import AboutMe from "../components/AboutMe.astro";
+import Header from "../components/Header.astro";
+import Layout from "../components/Layout.astro";
+import Projects from "../components/Projects.astro";
 ---
-
 <Layout>
-  <Header title={SITE_TITLE} />
+  <Header />
   <main>
     <h1 class="font-bold text-3xl mt-7">Hi, I'm César</h1>
-    
-    <div class="space-y-5 mt-3 text-base-content/90 text-justify">
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex voluptatum
-        dolore, obcaecati ipsam nemo ad, provident dignissimos debitis odio
-        eveniet quidem. Explicabo quas aliquam et porro quis nemo eveniet
-        laboriosam!
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis odio
-        voluptate eum maxime quam reprehenderit velit neque at laboriosam,
-        necessitatibus repudiandae earum odit in explicabo suscipit, sint
-        cupiditate? Voluptatibus, quia!
-      </p>
-    </div>
-
-    <h2 class="text-2xl font-bold mt-7">Things I've built</h2>
-
+    <AboutMe />
     <Projects />
   </main>
 </Layout>
