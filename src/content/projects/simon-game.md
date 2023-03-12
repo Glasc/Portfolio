@@ -1,7 +1,7 @@
 ---
-title: "Simon Game"
-technologies: "Typescript, Vue 3, Tailwind"
+title: "Simon game"
+technologies: "HTML, CSS, Javascript"
+img_href: "simon-showcase"
 link: "http://cesar-funes.me/Simon-Game-Funes/"
 ---
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit
-perspiciatis dolor laudantium saepe.
+Traditional memory game "Simon Says". The game is played on a 3x3 grid, with colored tiles lighting up in a specific order. Players must repeat the pattern by pressing the corresponding tiles in the same order. The patterns become longer and more complex as the game progresses, making it more challenging.

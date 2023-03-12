@@ -1,29 +1,33 @@
 ---
 import "../styles/global.css"
 import Header from "../components/Header.astro"
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
-import BaseHead from "../components/BaseHead.astro"
-import DaisySetup from "../components/DaisySetup.astro"
 import Layout from "../Layout.astro"
-import About from "../components/About.astro"
 import Projects from "../components/Projects.astro"
-
+import { SITE_TITLE } from "../consts"
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <DaisySetup />
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <Layout>
-    <Header title={SITE_TITLE} />
-    <main>
-      <h1 class="font-bold text-3xl mt-7">Hi, I'm César</h1>
-      <About />
+<Layout>
+  <Header title={SITE_TITLE} />
+  <main>
+    <h1 class="font-bold text-3xl mt-7">Hi, I'm César</h1>
+    
+    <div class="space-y-5 mt-3 text-base-content/90 text-justify">
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex voluptatum
+        dolore, obcaecati ipsam nemo ad, provident dignissimos debitis odio
+        eveniet quidem. Explicabo quas aliquam et porro quis nemo eveniet
+        laboriosam!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis odio
+        voluptate eum maxime quam reprehenderit velit neque at laboriosam,
+        necessitatibus repudiandae earum odit in explicabo suscipit, sint
+        cupiditate? Voluptatibus, quia!
+      </p>
+    </div>
 
-      <h2 class="text-2xl font-bold mt-7">Things I've built</h2>
-      <Projects />
-    </main>
-  </Layout>
-</html>
+    <h2 class="text-2xl font-bold mt-7">Things I've built</h2>
+
+    <Projects />
+  </main>
+</Layout>

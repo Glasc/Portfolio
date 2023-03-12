@@ -1,34 +1,51 @@
 ---
 import HeaderLink from "./HeaderLink.astro"
 import { SITE_TITLE } from "../consts"
-import { Icon } from "astro-icon"
-import Toggler from "./Toggler.astro";
+import { Toggler } from "./Toggler"
+import { Image } from "@astrojs/image/components"
+import avatar from "../assets/avatar-cut.png"
+
+type Link = {
+  href: string
+  label: string
+  isExternal?: boolean
+}
+
+const links: Link[] = [
+  {
+    href: "/",
+    label: "Home",
+  },
+  {
+    href: "mailto:cesarfunes2807@gmail.com",
+    label: "Mail",
+    isExternal: true,
+  },
+  {
+    href: "https://www.linkedin.com/in/c%C3%A9sar-funes-avila-188916210/",
+    label: "LinkedIn",
+    isExternal: true,
+  },
+  {
+    href: "https://github.com/Glasc",
+    label: "GitHub",
+    isExternal: true,
+  },
+]
 ---
 
 <header>
-  <h2 class="text-xl font-semibold">
-    {SITE_TITLE}
-  </h2>
+  <section class="flex items-center space-x-3">
+    <Image src={avatar} alt="My notion avatar" width={45} height={45} format="webp" />
+    <h2 class="text-xl font-semibold">
+      {SITE_TITLE}
+    </h2>
+  </section>
   <div class="flex justify-between items-center">
     <nav class="mt-2 flex space-x-3">
-      <HeaderLink href="/">Home</HeaderLink>
-      <HeaderLink
-        href="https://www.linkedin.com/in/c%C3%A9sar-funes-avila-188916210/"
-        target="_blank"
-        isExternal={true}
-      >
-        LinkedIn
-      </HeaderLink>
-
-      <HeaderLink
-        href="https://github.com/Glasc"
-        target="_blank"
-        isExternal={true}
-      >
-        GitHub
-      </HeaderLink>
+      {links.map((link) => <HeaderLink {...link}>{link.label}</HeaderLink>)}
     </nav>
 
-    <Toggler />
+    <Toggler client:load />
   </div>
 </header>

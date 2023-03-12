@@ -21,6 +21,7 @@ module.exports = {
           error: "#f38ba8", // red
         },
       },
+
       "winter",
     ],
   },
