@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets"
-import avatar from "../assets/avatar-cut.png"
-import { SITE_TITLE } from "../consts"
+import { SITE_TITLE } from "../../consts"
+import avatar from "../../assets/avatar-cut.png"
 import NavbarLink from "./NavbarLink.astro"
 import { Toggler } from "./Toggler"
 
@@ -41,8 +41,8 @@ const links: Link[] = [
       class="h-14 w-14"
       src={avatar}
       alt="My as a notion avatar"
-      width={150}
-      height={150}
+      width={70}
+      height={70}
       quality="high"
     />
     <h2 class="text-xl font-semibold">
@@ -53,6 +53,6 @@ const links: Link[] = [
     <nav class="mt-2 flex space-x-3">
       {links.map((link) => <NavbarLink {...link}>{link.label}</NavbarLink>)}
     </nav>
-    <Toggler client:idle />
+    <Toggler client:load />
   </nav>
 </header>
