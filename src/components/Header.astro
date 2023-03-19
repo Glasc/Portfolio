@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components"
+import { Image } from "astro:assets"
 import avatar from "../assets/avatar-cut.png"
 import { SITE_TITLE } from "../consts"
 import NavbarLink from "./NavbarLink.astro"
@@ -38,23 +38,21 @@ const links: Link[] = [
   <!-- avatar and title -->
   <section class="flex items-center space-x-3">
     <Image
+      class="h-14 w-14"
       src={avatar}
-      alt="My notion avatar"
-      width={45}
-      height={45}
-      format="webp"
+      alt="My as a notion avatar"
+      width={150}
+      height={150}
+      quality="high"
     />
     <h2 class="text-xl font-semibold">
       {SITE_TITLE}
     </h2>
   </section>
-
-  <!-- navbar with links and dark | light mode toggler -->
   <nav class="flex justify-between items-center">
     <nav class="mt-2 flex space-x-3">
       {links.map((link) => <NavbarLink {...link}>{link.label}</NavbarLink>)}
     </nav>
-
     <Toggler client:idle />
   </nav>
 </header>

@@ -1,19 +1,17 @@
 ---
-import "../styles/global.css";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
-import BaseHead from "./BaseHead.astro"
-import DaisySetup from "./DaisySetup.astro"
+import DaisySetup from "./DaisySetup.astro";
+import BaseHead from "./BaseHead.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
-
 <!DOCTYPE html>
 <html lang="en" class="dark">
   <head>
     <DaisySetup />
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body class="custom-bg min-h-screen w-full">
+  <body class="custom-bg min-h-screen bg-base-300 w-full">
     <div class="max-w-3xl px-3 py-8 w-full mx-auto">
       <slot />
-    </div>
+    </div>  
   </body>
 </html>

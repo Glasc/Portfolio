@@ -1,36 +1,38 @@
 ---
-import { getImage } from "@astrojs/image"
+import { Image } from "astro:assets"
 
 type Props = {
   title: string
   technologies: string[]
   body: string
   link: string
-  img_href: string
+  cover: ImageMetadata
+  coverAlt: string
 }
 
 const props = Astro.props
-
-const imageProps = await getImage({
-  src: import(`../assets/${props.img_href}.png`),
-  format: "webp",
-  alt: `${props.title} showcase`,
-  width: 700,
-})
 ---
 
 <li
-  class="shadow-lg border-primary/20 bg-base-200 rounded-2xl cursor-pointer  hover:border-accent/50 ease-out transition-transform group overflow-hidden"
+  class="shadow border-primary/20 bg-base-200 rounded-2xl cursor-pointer hover:border-accent/50 transition-all duration-300 transform-gpu hover:-translate-y-1 ease-out group overflow-hidden"
 >
   <a href={props.link} class="flex space-x-5" target="_blank">
-    <img {...imageProps} class="w-full max-w-[14rem] object-cover rounded-md" />
+    <Image
+      class="w-full max-w-[14rem] object-cover rounded-md"
+      src={props.cover}
+      alt={props.coverAlt}
+      format="webp"
+    />
+
     <section class="w-full p-6">
       <div class="flex flex-col h-full justify-between">
         <div>
-          <h3 class="group-hover:text-accent font-semibold uppercase text-xl">
+          <h3 class="text-neutral group-hover:text-accent font-bold uppercase text-xl">
             {props.title}
           </h3>
-          <p class="text-base-content/80 text-sm mt-2 text-justify leading-relaxed">
+          <p
+            class="text-base-content text-base mt-1 text-justify leading-relaxed"
+          >
             {props.body}
           </p>
         </div>

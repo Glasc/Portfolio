@@ -4,6 +4,6 @@
     "strictNullChecks": true,
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "types": ["unplugin-icons/types/react", "@astrojs/image/client"]
+    "types": ["unplugin-icons/types/react"]
   }
 }
