@@ -1,0 +1,38 @@
+---
+import NavbarLink from "./NavbarLink.astro"
+import { Toggler } from "./Toggler"
+
+type Link = {
+  href: string
+  label: string
+  isExternal?: boolean
+}
+
+const links: Link[] = [
+  {
+    href: "/",
+    label: "Home",
+  },
+  {
+    href: "mailto:cesarfunes2807@gmail.com",
+    label: "Mail",
+  },
+  {
+    href: "https://www.linkedin.com/in/c%C3%A9sar-funes-avila-188916210/",
+    label: "LinkedIn",
+    isExternal: true,
+  },
+  {
+    href: "https://github.com/Glasc",
+    label: "GitHub",
+    isExternal: true,
+  },
+]
+---
+
+<nav class="flex justify-between items-center">
+  <nav class="mt-2 flex space-x-3">
+    {links.map((link) => <NavbarLink {...link}>{link.label}</NavbarLink>)}
+  </nav>
+  <Toggler client:load />
+</nav>
