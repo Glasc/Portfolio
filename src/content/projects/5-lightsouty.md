@@ -2,7 +2,7 @@
 title: "Lightsouty"
 technologies: "Typescript, React, SCSS"
 cover: "lightsout-showcase.png"
-coverAlt: "A photograph of a sunset behind a mountain range"
+coverAlt: "Lights out game showcase"
 link: "https://lightsouthy.netlify.app/"
 ---
 

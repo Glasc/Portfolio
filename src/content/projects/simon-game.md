@@ -2,7 +2,7 @@
 title: "Simon game"
 technologies: "HTML, CSS, Javascript"
 cover: "simon-showcase.png"
-coverAlt: "A photograph of a sunset behind a mountain range"
+coverAlt: "Simon game showcase"
 link: "https://glasc.github.io/Simon-Game-Funes/"
 ---
 
