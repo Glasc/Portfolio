@@ -1,9 +1,3 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "compilerOptions": {
-    "strictNullChecks": true,
-    "jsx": "react-jsx",
-    "jsxImportSource": "react",
-    "types": ["unplugin-icons/types/react"]
-  }
+  "extends": "astro/tsconfigs/strict"
 }

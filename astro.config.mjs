@@ -1,33 +1,17 @@
-import { defineConfig } from "astro/config"
-import sitemap from "@astrojs/sitemap"
+import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
+import tailwind from "@astrojs/tailwind";
+import svelte from "@astrojs/svelte";
 
-// https://astro.build/config
-import tailwind from "@astrojs/tailwind"
-
-// https://astro.build/config
-import react from "@astrojs/react"
-import Icons from "unplugin-icons/vite"
-
-// https://astro.build/config
 export default defineConfig({
   experimental: {
-    assets: true,
+    assets: true
   },
   site: "https://example.com",
-  integrations: [
-    sitemap(),
-    tailwind(),
-    react(),
-  ],  
+  integrations: [sitemap(), tailwind(), svelte()],
   vite: {
     ssr: {
-      external: ["svgo"],
+      external: ["svgo"]
     },
-    plugins: [
-      Icons({
-        compiler: "jsx",
-        jsx: "react",
-      }),
-    ],
-  },
-})
+  }
+});
