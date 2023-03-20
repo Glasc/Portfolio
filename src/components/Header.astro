@@ -1,19 +1,11 @@
 ---
+import { getEntryBySlug } from 'astro:content';
+
+const introducing = await getEntryBySlug('introducing', 'introducing');
 ---
 <section class="text-lg text-justify">
-  <h1 class="font-bold text-3xl text-neutral lg:text-5xl mt-7">Hi, I'm César</h1>
+  <h1 class="font-bold text-3xl text-neutral lg:text-5xl mt-7">{introducing.data.greeting}</h1>
   <div class="space-y-3 mt-3 text-base-content/90">
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex voluptatum
-      dolore, obcaecati ipsam nemo ad, provident dignissimos debitis odio
-      eveniet quidem. Explicabo quas aliquam et porro quis nemo eveniet
-      laboriosam!
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis odio
-      voluptate eum maxime quam reprehenderit velit neque at laboriosam,
-      necessitatibus repudiandae earum odit in explicabo suscipit, sint
-      cupiditate? Voluptatibus, quia!
-    </p>
+    {introducing.body}
   </div>
 </section>

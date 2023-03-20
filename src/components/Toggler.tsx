@@ -1,7 +1,7 @@
 import Sun from "~icons/ri/sun-fill"
 import Moon from "~icons/ri/moon-fill"
 import { useEffect, useState } from "react"
-
+// TODO:  this component doesn't look good on mobile..
 const themes = {
   dark: "catppuccin-mocha",
   light: "winter",

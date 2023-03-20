@@ -1,6 +1,5 @@
 ---
 import NavbarLink from "./NavbarLink.astro"
-import { Toggler } from "./Toggler"
 
 type Link = {
   href: string
@@ -34,5 +33,4 @@ const links: Link[] = [
   <nav class="mt-2 flex space-x-3">
     {links.map((link) => <NavbarLink {...link}>{link.label}</NavbarLink>)}
   </nav>
-  <Toggler client:load />
 </nav>
