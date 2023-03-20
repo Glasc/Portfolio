@@ -14,11 +14,11 @@ const props = Astro.props
 ---
 
 <li
-  class="shadow border-primary/20 bg-base-100 rounded-2xl cursor-pointer hover:border-accent/50 transition-all duration-300 transform-gpu hover:-translate-y-1 ease-out group overflow-hidden"
+  class="shadow w-full border-primary/20 bg-base-100 rounded-2xl cursor-pointer hover:border-accent/50 transition-all duration-300 transform-gpu hover:-translate-y-1 ease-out group overflow-hidden"
 >
-  <a href={props.link} class="flex space-x-5" target="_blank">
+  <a href={props.link} class="flex flex-col sm:flex-row sm:space-x-5" target="_blank">
     <Image
-      class="w-full max-w-[14rem] object-cover rounded-md"
+      class="w-full sm:max-w-[14rem] object-cover rounded-md"
       src={props.cover}
       alt={props.coverAlt}
       format="webp"
@@ -37,7 +37,7 @@ const props = Astro.props
             {props.body}
           </p>
         </div>
-        <div class="mt-5 flex flex-wrap font-medium space-x-2">
+        <div class="mt-5 flex flex-wrap font-medium gap-2">
           {
             props.technologies.map((technology) => {
               return (
