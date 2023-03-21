@@ -1,5 +1,5 @@
 ---
-import type { Language } from "../../pages/[languageParam].astro"
+import type { Params } from "../../pages/[...slug].astro"
 import NavbarLink from "./NavbarLink.astro"
 
 type Link = {
@@ -55,9 +55,9 @@ const linksByLanguage: Links = {
   ],
 }
 
-const languageParam = Astro.params.languageParam as Language
+const { slug } = Astro.params as Params
 
-const links = linksByLanguage[languageParam] || linksByLanguage.en
+const links = linksByLanguage[slug]
 ---
 
 <nav class="flex justify-between items-center">

@@ -1,29 +1,25 @@
 ---
-import Image from "astro/components/Image.astro"
 import avatar from "../assets/avatar-cut.png"
 import { SITE_TITLE } from "../consts"
 import Toggler from "./Toggler.svelte"
 import { Icon } from "astro-icon"
-import type { Language } from "../pages/[languageParam].astro"
+import { Image } from "astro:assets"
+import type { Params } from "../pages/[...slug].astro"
 
 const languageChanger = {
   en: {
-    text: "Español",
-    lang: "es",
     href: "/es",
   },
   es: {
-    text: "English",
-    lang: "en",
     href: "/en",
   },
 } as const
 
-const languageParam = Astro.params.languageParam as Language
-const { text, href, lang } = languageChanger[languageParam]
+const { slug: language } = Astro.params as Params
+const { href } = languageChanger[language]
 
-let language = ["English", "Español"]
-if (languageParam === "es") language = language.reverse()
+let languages = ["English", "Español"]
+if (language === "es") languages = languages.reverse()
 ---
 
 <section class="flex justify-between items-center">
@@ -42,13 +38,20 @@ if (languageParam === "es") language = language.reverse()
   </div>
 
   <div class="flex">
-    <button class="mr-5 shadow border border-base-200 px-3 bg-base-100 rounded-full transition-all ease-out hover:scale-105">
-      <a class="flex items-center w-full h-full" hreflang={lang} href={href} rel="prefetch">
-        <Icon class="inline-block mr-1" name="ri:global-line" size={20} />
-        <div class="flex justify-between space-x-1 font-medium">
-          <span class="text-neutral font-semibold">{language[0]}</span>
-          <span class="text-gray-300">|</span>
-          <span class="text-base-content/60">{language[1]}</span>
+    <button
+      class="mr-2 sm:mr-5 shadow border border-base-200 px-3 bg-base-100 rounded-full transition-all ease-out hover:scale-105"
+    >
+      <a
+        class="flex items-center w-full h-full"
+        hreflang={language}
+        href={href}
+        rel="prefetch"
+      >
+        <Icon class="inline-block sm:mr-1" name="ri:global-line" size={20} />
+        <div class=" justify-between space-x-1 sm:flex hidden font-medium">
+          <span class="text-neutral font-semibold">{languages[0]}</span>
+          <span class="text-gray-400">|</span>
+          <span class="text-base-content/70">{languages[1]}</span>
         </div>
       </a>
     </button>

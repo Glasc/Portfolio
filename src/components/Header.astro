@@ -1,31 +1,22 @@
 ---
-import { getEntryBySlug } from "astro:content"
-import type { Language } from "../pages/[languageParam].astro"
+import type { Introducing, Params } from "../pages/[...slug].astro"
 
-const entriesByLanguage = {
-  en: {
-    collection: "introducing",
-    slug: "introducing",
-  },
-  es: {
-    collection: "introducing-spanish",
-    slug: "introducing",
-  },
-} as const
+type Props = {
+  introducing: Introducing
+}
 
-const languageParam = Astro.params.languageParam as Language
-const { collection, slug } = entriesByLanguage[languageParam]
+const { introducing } = Astro.props
 
-const introducing = await getEntryBySlug(collection, slug)
 const { Content } = await introducing.render()
 
+const { slug: language } = Astro.params as Params
 
 const greetingByLanguage = {
   es: "Hola, soy César",
   en: "Hi, I'm César",
 }
 
-const greeting = greetingByLanguage[languageParam]
+const greeting = greetingByLanguage[language]
 ---
 
 <header class="text-lg text-justify text-base-content/90">

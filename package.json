@@ -16,7 +16,6 @@
     "@astrojs/sitemap": "^1.1.0",
     "@astrojs/svelte": "^2.1.0",
     "@astrojs/tailwind": "^3.0.1",
-    "@astrojs/vercel": "^3.2.1",
     "@fontsource/hanken-grotesk": "^4.5.2",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",

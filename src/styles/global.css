@@ -18,9 +18,5 @@ body {
   word-wrap: break-word;
   overflow-wrap: break-word;
   line-height: 1.5;
-}
-
-body,
-a {
   font-family: "Hanken Grotesk", Arial, sans-serif;
 }

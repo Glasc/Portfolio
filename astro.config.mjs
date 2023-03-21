@@ -4,8 +4,6 @@ import tailwind from "@astrojs/tailwind";
 import svelte from "@astrojs/svelte";
 import prefetch from "@astrojs/prefetch";
 
-import vercel from "@astrojs/vercel/serverless";
-
 // https://astro.build/config
 export default defineConfig({
   experimental: {
@@ -18,6 +16,4 @@ export default defineConfig({
       external: ["svgo"]
     }
   },
-  output: "server",
-  adapter: vercel()
 });

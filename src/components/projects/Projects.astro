@@ -1,48 +1,23 @@
 ---
+import type { Params, Projects } from "../../pages/[...slug].astro"
 import Project from "./Project.astro"
-import { getCollection } from "astro:content"
-import type { Language } from "../../pages/[languageParam].astro"
 
-const collectionByLanguage = {
-  en: {
-    collection: "projects",
-  },
-  es: {
-    collection: "projects-spanish",
-  },
-} as const
-
-const languageParam = Astro.params.languageParam as Language
-const { collection } = collectionByLanguage[languageParam]
-const projects = await getCollection(collection)
-
-const projectsIntroductionByLanguage = {
-  es: "Proyectos",
-  en: "Projects",
+type Props = {
+  projects: Projects
 }
 
-const projectsIntroduction = projectsIntroductionByLanguage[languageParam]
+const { projects } = Astro.props
+
+const { slug: language } = Astro.params as Params
+
+let introduction = language === "en" ? "Projects" : "Proyectos"
 ---
 
 <main>
   <h2 class="text-2xl font-bold mt-7 text-neutral text-center sm:text-left">
-    {projectsIntroduction}
+    {introduction}
   </h2>
   <ul class="mt-4 space-y-6">
-    {
-      projects?.map((project) => {
-        const { title, link, technologies, cover, coverAlt } = project.data
-        return (
-          <Project
-            title={title}
-            link={link}
-            technologies={technologies.split(",")}
-            body={project.body}
-            cover={cover as ImageMetadata}
-            coverAlt={coverAlt}
-          />
-        )
-      })
-    }
+    {projects?.map((project) => <Project {...project} />)}
   </ul>
 </main>

@@ -1,0 +1,42 @@
+---
+import Header from "../components/Header.astro"
+import Layout from "../components/layout/Layout.astro"
+import Navbar from "../components/navbar/Navbar.astro"
+import Profile from "../components/Profile.astro"
+import Projects from "../components/projects/Projects.astro"
+import { getEntryBySlug, getCollection } from "astro:content"
+
+export function getStaticPaths() {
+  return [
+    {
+      params: {
+        slug: "en",
+      },
+    },
+    {
+      params: {
+        slug: "es",
+      },
+    },
+  ]
+}
+
+export type Params = {
+  slug: "en" | "es"
+}
+
+const { slug } = Astro.params as Params
+
+const projects = await getCollection(`${slug}-projects`)
+const introducing = await getEntryBySlug(`${slug}-introducing`, "introducing")
+
+export type Introducing = typeof introducing
+export type Projects = typeof projects
+---
+
+<Layout>
+  <Profile />
+  <Navbar />
+  <Header introducing={introducing} />
+  <Projects projects={projects} />
+</Layout>

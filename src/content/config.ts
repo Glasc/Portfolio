@@ -17,8 +17,8 @@ const introducing = defineCollection({
 })
 
 export const collections = {
-  projects,
-  "projects-spanish": projects,
-  introducing,
-  "introducing-spanish": introducing,
+  "en-introducing": introducing,
+  "es-introducing": introducing,
+  "en-projects": projects,
+  "es-projects": projects,
 }
