@@ -5,5 +5,5 @@ cover: "speech-bubble-showcase.png"
 coverAlt: "speech bubble app showcase"
 link: "https://bubble-speech-generator.vercel.app/"
 ---
+El bocadillo es un elemento visual que aparece encima de la imagen y muestra un mensaje de texto, creando un efecto humorístico. Esta aplicación se puede utilizar para agregar un toque lúdico a las conversaciones.
 
-The speech bubble is a visual element that appears above the image and displays a text message, creating a humorous effect. This app can be used to add a playful touch to conversations.

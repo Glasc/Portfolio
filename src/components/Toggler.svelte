@@ -1,7 +1,6 @@
 <script lang="ts">
-  import Sun from 'svelte-remixicon/lib/icons/SunFill.svelte';
-  import Moon from 'svelte-remixicon/lib/icons/MoonFill.svelte';
-
+  import Sun from "svelte-remixicon/lib/icons/SunFill.svelte"
+  import Moon from "svelte-remixicon/lib/icons/MoonFill.svelte"
   import { onMount } from "svelte"
 
   const themes = {
@@ -30,10 +29,11 @@
 </script>
 
 <section
-  class="px-3 py-2 text-lg rounded-full bg-base-100 flex items-center space-x-2"
+  class="shadow-lg text-lg flex items-center space-x-2 px-3 py-2 border border-base-300 rounded-full bg-base-100"
 >
   <button data-set-theme={themes.light}>
     <Sun
+      size="23"
       data-act-class="ACTIVECLASS"
       class={`${lightSelected ? "text-orange-400/90" : ""}`}
       on:click={() => setTheme(themes.light)}
@@ -41,6 +41,7 @@
   </button>
   <button data-set-theme={themes.dark}>
     <Moon
+      size="23"
       data-act-class="ACTIVECLASS"
       class={`${darkSelected ? "text-orange-400/90" : ""}`}
       on:click={() => setTheme(themes.dark)}

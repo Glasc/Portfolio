@@ -1,4 +1,5 @@
 ---
+import type { Language } from "../../pages/[languageParam].astro"
 import NavbarLink from "./NavbarLink.astro"
 
 type Link = {
@@ -7,26 +8,56 @@ type Link = {
   isExternal?: boolean
 }
 
-const links: Link[] = [
-  {
-    href: "/",
-    label: "Home",
-  },
-  {
-    href: "mailto:cesarfunes2807@gmail.com",
-    label: "Mail",
-  },
-  {
-    href: "https://www.linkedin.com/in/c%C3%A9sar-funes-avila-188916210/",
-    label: "LinkedIn",
-    isExternal: true,
-  },
-  {
-    href: "https://github.com/Glasc",
-    label: "GitHub",
-    isExternal: true,
-  },
-]
+type Links = {
+  [key: string]: Link[]
+}
+
+const linksByLanguage: Links = {
+  en: [
+    {
+      href: "/",
+      label: "Home",
+    },
+    {
+      href: "mailto:cesarfunes2807@gmail.com",
+      label: "Mail",
+    },
+    {
+      href: "https://www.linkedin.com/in/c%C3%A9sar-funes-avila-188916210/",
+      label: "LinkedIn",
+      isExternal: true,
+    },
+    {
+      href: "https://github.com/Glasc",
+      label: "GitHub",
+      isExternal: true,
+    },
+  ],
+  es: [
+    {
+      href: "/",
+      label: "Inicio",
+    },
+    {
+      href: "mailto:cesarfunes2807@gmail.com",
+      label: "Correo",
+    },
+    {
+      href: "https://www.linkedin.com/in/c%C3%A9sar-funes-avila-188916210/",
+      label: "LinkedIn",
+      isExternal: true,
+    },
+    {
+      href: "https://github.com/Glasc",
+      label: "GitHub",
+      isExternal: true,
+    },
+  ],
+}
+
+const languageParam = Astro.params.languageParam as Language
+
+const links = linksByLanguage[languageParam] || linksByLanguage.en
 ---
 
 <nav class="flex justify-between items-center">

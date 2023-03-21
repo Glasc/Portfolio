@@ -1,6 +1,3 @@
 ---
-greeting: "Hi, I'm César"
 ---
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex voluptatum dolore, obcaecati ipsam nemo ad, provident dignissimos debitis odio eveniet quidem. Explicabo quas aliquam et porro quis nemo eveniet laboriosam!
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis odio voluptate eum maxime quam reprehenderit velit neque at laboriosam, necessitatibus repudiandae earum odit in explicabo suscipit, sint cupiditate? Voluptatibus, quia!
+I'm a recent graduate in Systems Engineering from Tecnológico Mario Molina. I'm passionate about front-end web development, with experience using Astro, TypeScript, and Sanity.io CMS. I've built a CMS-enabled website for Keto Bakery & Coffee and contributed to a teacher planning system's front-end. I'm currently seeking opportunities to join a development team and further develop my skills.

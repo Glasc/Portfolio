@@ -13,9 +13,12 @@ const projects = defineCollection({
 
 const introducing = defineCollection({
   // Type-check frontmatter using a schema
-  schema: z.object({
-    greeting: z.string().min(1),
-  }),
+  schema: z.object({}),
 })
 
-export const collections = { projects, introducing }
+export const collections = {
+  projects,
+  "projects-spanish": projects,
+  introducing,
+  "introducing-spanish": introducing,
+}

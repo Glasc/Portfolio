@@ -2,13 +2,34 @@
 import Image from "astro/components/Image.astro"
 import avatar from "../assets/avatar-cut.png"
 import { SITE_TITLE } from "../consts"
-import Toggler from "./Toggler.svelte";
+import Toggler from "./Toggler.svelte"
+import { Icon } from "astro-icon"
+import type { Language } from "../pages/[languageParam].astro"
+
+const languageChanger = {
+  en: {
+    text: "Español",
+    lang: "es",
+    href: "/es",
+  },
+  es: {
+    text: "English",
+    lang: "en",
+    href: "/en",
+  },
+} as const
+
+const languageParam = Astro.params.languageParam as Language
+const { text, href, lang } = languageChanger[languageParam]
+
+let language = ["English", "Español"]
+if (languageParam === "es") language = language.reverse()
 ---
 
 <section class="flex justify-between items-center">
   <div class="flex space-x-3 items-center">
     <Image
-      class="h-14 w-14"
+      class="h-12 w-12"
       src={avatar}
       alt="My as a notion avatar"
       width={70}
@@ -20,5 +41,18 @@ import Toggler from "./Toggler.svelte";
     </h2>
   </div>
 
-  <Toggler client:load />
+  <div class="flex">
+    <button class="mr-5 shadow-lg px-3 bg-base-100 rounded-full transition-all ease-out hover:scale-105 focus-within:scale-110">
+      <a class="flex items-center w-full h-full" hreflang={lang} href={href} rel="prefetch">
+        <Icon class="inline-block mr-1" name="ri:global-line" size={20} />
+        <div class="flex justify-between space-x-1 font-medium">
+          <span class="text-neutral font-semibold">{language[0]}</span>
+          <span class="text-gray-300">|</span>
+          <span class="text-base-content/60">{language[1]}</span>
+        </div>
+      </a>
+    </button>
+
+    <Toggler client:load />
+  </div>
 </section>
