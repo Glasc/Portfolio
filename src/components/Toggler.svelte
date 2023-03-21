@@ -28,23 +28,21 @@
   })
 </script>
 
-<section
-  class="shadow-lg text-lg flex items-center space-x-2 px-3 py-2 border border-base-300 rounded-full bg-base-100"
+<button
+  class="shadow-lg text-lg flex items-center space-x-2 px-3 py-2 border border-base-300 rounded-full bg-base-100 transition-all ease-out hover:scale-105"
+  data-set-theme={selectedTheme === themes.dark ? themes.light : themes.dark}
+  on:click={() =>
+    setTheme(selectedTheme === themes.dark ? themes.light : themes.dark)}
+  data-act-class="ACTIVECLASS"
 >
-  <button data-set-theme={themes.light}>
-    <Sun
-      size="23"
-      data-act-class="ACTIVECLASS"
-      class={`${lightSelected ? "text-orange-400/90" : ""}`}
-      on:click={() => setTheme(themes.light)}
-    />
-  </button>
-  <button data-set-theme={themes.dark}>
-    <Moon
-      size="23"
-      data-act-class="ACTIVECLASS"
-      class={`${darkSelected ? "text-orange-400/90" : ""}`}
-      on:click={() => setTheme(themes.dark)}
-    />
-  </button>
-</section>
+  <Sun
+    size="23"
+    data-act-class="ACTIVECLASS"
+    class={`${lightSelected ? "text-orange-400/90" : ""}`}
+  />
+  <Moon
+    size="23"
+    data-act-class="ACTIVECLASS"
+    class={`${darkSelected ? "text-orange-400/90" : ""}`}
+  />
+</button>
