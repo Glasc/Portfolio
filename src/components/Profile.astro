@@ -1,7 +1,6 @@
 ---
 import avatar from "../assets/avatar-cut.png"
 import { SITE_TITLE } from "../consts"
-import Toggler from "./Toggler.svelte"
 import { Icon } from "astro-icon"
 import { Image } from "astro:assets"
 import type { Params } from "../pages/[...slug].astro"
@@ -64,6 +63,5 @@ if (language === "es") languages = languages.reverse()
     >
       <Icon size="23" name="ri:sun-fill" />
     </button>
-
   </div>
 </section>
