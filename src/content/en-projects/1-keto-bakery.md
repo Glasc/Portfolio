@@ -5,4 +5,4 @@ cover: "keto-showcase.png"
 coverAlt: "Keto Bakery showcase"
 link: "https://www.keto-bakery.cafe/"
 ---
-Residency project for a coffee shop in Puerto Vallarta. Contains a Content Management System (CMS) for products and blog.
+Graduation project for a coffee shop in Puerto Vallarta. Contains a Content Management System (CMS) for products and blog.
