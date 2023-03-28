@@ -12,6 +12,12 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  min-height: 100%;
+  width: 100%;
+}
+
 body {
   margin: auto;
   text-align: left;
@@ -19,4 +25,6 @@ body {
   overflow-wrap: break-word;
   line-height: 1.5;
   font-family: "Hanken Grotesk", Arial, sans-serif;
+  @apply bg-gradient-to-b from-primary/5 via-base-200 to-base-300;
+  
 }
