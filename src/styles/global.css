@@ -24,7 +24,6 @@ body {
   word-wrap: break-word;
   overflow-wrap: break-word;
   line-height: 1.5;
-  font-family: "Hanken Grotesk", Arial, sans-serif;
+  font-family: "Hanken Grotesk", "Helvetica Neue", sans-serif;
   @apply bg-gradient-to-b from-primary/5 via-base-200 to-base-300;
-  
 }
