@@ -32,9 +32,10 @@ const introducing = await getEntryBySlug(`${slug}-introducing`, "introducing")
 
 export type Introducing = typeof introducing
 export type Projects = typeof projects
+
 ---
 
-<Layout>
+<Layout lang={slug}>
   <Profile />
   <Navbar />
   <Header introducing={introducing} />

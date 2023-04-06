@@ -7,17 +7,20 @@ import "@fontsource/hanken-grotesk/600.css"
 import "@fontsource/hanken-grotesk/700.css"
 import "../../styles/global.css"
 
+type Props = {
+  lang: "en" | "es"
+}
+
+const { lang } = Astro.props
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang={lang} class="dark">
   <head>
     <DaisySetup />
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body
-    class="min-h-screen w-full"
-  >
+  <body class="min-h-screen w-full">
     <div class="max-w-3xl px-5 py-8 h-full w-full mx-auto">
       <slot />
     </div>
