@@ -1,18 +1,17 @@
-import { defineConfig } from "astro/config";
-import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
-import prefetch from "@astrojs/prefetch";
+import { defineConfig } from "astro/config"
+import sitemap from "@astrojs/sitemap"
+import tailwind from "@astrojs/tailwind"
 
 // https://astro.build/config
 export default defineConfig({
   experimental: {
-    assets: true
+    assets: true,
   },
   site: "https://example.com",
-  integrations: [sitemap(), tailwind(), prefetch()],
+  integrations: [sitemap(), tailwind()],
   vite: {
     ssr: {
-      external: ["svgo"]
-    }
+      external: ["svgo"],
+    },
   },
-});
+})

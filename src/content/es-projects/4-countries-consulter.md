@@ -1,7 +1,7 @@
 ---
 title: "Countries consulter"
 technologies: "Typescript, React, Tailwind"
-cover: "country-showcase.png"
+cover: "~/assets/country-showcase.png"
 coverAlt: "Countries consulter webapp showcase"
 link: "https://countries-consulter.vercel.app/"
 ---

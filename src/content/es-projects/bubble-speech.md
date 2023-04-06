@@ -1,7 +1,7 @@
 ---
 title: "Speech bubble meme generator"
 technologies: "Typescript, React, Tailwind, Canvas"
-cover: "speech-bubble-showcase.png"
+cover: "~/assets/speech-bubble-showcase.png"
 coverAlt: "speech bubble app showcase"
 link: "https://bubble-speech-generator.vercel.app/"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Premier League standings"
 technologies: "Typescript, React, Tailwind"
-cover: "epl-leaderboard.png"
+cover: "~/assets/epl-leaderboard.png"
 coverAlt: "Premier League leaderboard showcase"
 link: "https://epl-sccr-leaderboard.netlify.app/#/2022"
 ---

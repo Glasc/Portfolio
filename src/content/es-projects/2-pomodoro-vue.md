@@ -1,7 +1,7 @@
 ---
 title: "PomoVue"
 technologies: "Typescript, Vue 3, Tailwind"
-cover: "pomovue-showcase.png"
+cover: "~/assets/pomovue-showcase.png"
 coverAlt: "Pomodoro webapp showcase"
 link: "https://pomodoro-glasc.vercel.app/"
 ---

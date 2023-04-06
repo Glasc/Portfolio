@@ -1,7 +1,7 @@
 ---
 title: "Keto Bakery & Coffee"
 technologies: "Typescript, Astro, Sanity.io"
-cover: "keto-showcase.png"
+cover: "~/assets/keto-showcase.png"
 coverAlt: "Keto Bakery showcase"
 link: "https://www.keto-bakery.cafe/"
 ---

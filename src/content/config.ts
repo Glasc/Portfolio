@@ -1,14 +1,15 @@
-import { defineCollection, z, image } from "astro:content"
+import { defineCollection, z } from "astro:content"
 
 const projects = defineCollection({
   // Type-check frontmatter using a schema
-  schema: z.object({
-    title: z.string(),
-    technologies: z.string(),
-    cover: image(),
-    coverAlt: z.string(),
-    link: z.string(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      technologies: z.string(),
+      cover: image(),
+      coverAlt: z.string(),
+      link: z.string(),
+    }),
 })
 
 const introducing = defineCollection({

@@ -1,7 +1,7 @@
 ---
 title: "Lightsouty"
 technologies: "Typescript, React, SCSS"
-cover: "lightsout-showcase.png"
+cover: "~/assets/lightsout-showcase.png"
 coverAlt: "Lights out game showcase"
 link: "https://lightsouthy.netlify.app/"
 ---
