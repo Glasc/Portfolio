@@ -1,5 +1,5 @@
 ---
-import Header from "../components/Header.astro"
+import AboutMe from "../components/AboutMe.astro"
 import Layout from "../components/layout/Layout.astro"
 import Navbar from "../components/navbar/Navbar.astro"
 import Profile from "../components/Profile.astro"
@@ -32,12 +32,13 @@ const introducing = await getEntryBySlug(`${slug}-introducing`, "introducing")
 
 export type Introducing = typeof introducing
 export type Projects = typeof projects
-
 ---
 
 <Layout lang={slug}>
-  <Profile />
-  <Navbar />
-  <Header introducing={introducing} />
+  <header>
+    <Profile />
+    <Navbar />
+  </header>
+  <AboutMe introducing={introducing} />
   <Projects projects={projects} />
 </Layout>
