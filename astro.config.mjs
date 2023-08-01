@@ -8,7 +8,9 @@ export default defineConfig({
     assets: true,
   },
   site: "https://example.com",
-  integrations: [sitemap(), tailwind()],
+  integrations: [sitemap(), tailwind({
+    applyBaseStyles: false,
+  })],
   vite: {
     ssr: {
       external: ["svgo"],
