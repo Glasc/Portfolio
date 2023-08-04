@@ -1,8 +1,8 @@
 ---
 title: "Premier League standings"
-technologies: "Typescript, React, Tailwind"
+technologies: "Typescript, Astro, Shadcn"
 cover: "~/assets/epl-leaderboard.png"
 coverAlt: "Premier League leaderboard showcase"
-link: "https://epl-sccr-leaderboard.netlify.app/#/2022"
+link: "pl-standings.vercel.app"
 ---
-Web app that displays the Premier League standings and team stats for current and past seasons. Users can compare team stats and track the progress of their favorite teams over time. This app makes use of a football api.
+Web app that displays the Premier League standings and team stats for current and past seasons. The data is fetched from the azharimm football-standings-api.
