@@ -1,6 +1,6 @@
 ---
 title: "Random Hokusai paintings"
-technologies: "Astro, Typescript"
+technologies: "Astro, Typescript, Tailwind"
 cover: "~/assets/hokusai-paintings-showcase.png"
 coverAlt: "Random Hokusai panting project showcase"
 link: "https://hokusai-paintings.vercel.app/"
