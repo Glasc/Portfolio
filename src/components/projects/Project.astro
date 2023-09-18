@@ -1,13 +1,13 @@
 ---
 import { Image } from "astro:assets"
-import type { Projects } from "../../pages/[...slug].astro";
+import type { Projects } from "../../pages/[...slug].astro"
 
 type Props = Projects[number]
 const props = Astro.props
 ---
 
 <li
-  class="shadow-lg w-full border-primary/20 bg-base-100 rounded-2xl cursor-pointer hover:border-accent/50 transition-all duration-300 transform-gpu hover:-translate-y-1 ease-out group overflow-hidden"
+  class="shadow-lg w-full border-primary/20 bg-base-100 rounded-2xl cursor-pointer hover:border-accent/50 transition-all duration-300 transform-gpu hover:-translate-y-1 ease-out group overflow-hidden opacity-0"
 >
   <a
     href={props.data.link}
@@ -29,9 +29,7 @@ const props = Astro.props
         >
           {props.data.title}
         </h3>
-        <p
-          class="text-base-content/90 mt-1 text-justify leading-relaxed"
-        >
+        <p class="text-base-content/90 mt-1 text-justify leading-relaxed">
           {props.body}
         </p>
       </div>
@@ -49,3 +47,25 @@ const props = Astro.props
     </section>
   </a>
 </li>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const hasLoaded = entry.target.classList.contains("loaded")
+      if (entry.isIntersecting || hasLoaded) {
+        entry.target.classList.remove("opacity-0")
+        entry.target.classList.add("loaded")
+      } else {
+        entry.target.classList.add("opacity-0")
+      }
+    })
+  })
+
+  const hiddenElements = document.querySelectorAll(
+    ".opacity-0"
+  ) as NodeListOf<HTMLLIElement>
+
+  hiddenElements.forEach((element) => {
+    observer.observe(element)
+  })
+</script>
