@@ -1,14 +1,7 @@
 <script is:inline>
-  // ☝️ This script prevent the FART effect.
-  if (localStorage.getItem("theme") === null) {
-    document.documentElement.setAttribute("data-theme", "catppuccin-mocha")
-  } else
-    document.documentElement.setAttribute(
-      "data-theme",
-      localStorage.getItem("theme")
-    )
-  // "theme" LocalStorage value is set by the package to remember user preference.
-  // The value is checked and applyed before rendering anything.
+// ☝️ This script prevent the FART effect.
+document.documentElement.setAttribute(
+  "data-theme",
+  localStorage.getItem("theme") ?? "catppuccin-mocha" // 👈 Change this to your default theme ("dark" / "light")
+)
 </script>
-
-<script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>

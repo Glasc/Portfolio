@@ -6,11 +6,15 @@ import tailwind from "@astrojs/tailwind"
 export default defineConfig({
   experimental: {
     assets: true,
+    viewTransitions: true,
   },
   site: "https://example.com",
-  integrations: [sitemap(), tailwind({
-    applyBaseStyles: false,
-  })],
+  integrations: [
+    sitemap(),
+    tailwind({
+      applyBaseStyles: false,
+    }),
+  ],
   vite: {
     ssr: {
       external: ["svgo"],

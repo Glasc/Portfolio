@@ -38,10 +38,10 @@ if (language === "es") languages = languages.reverse()
 
   <div class="flex">
     <button
-      class="mr-2 shadow-lg sm:mr-5  border border-base-200 px-3 bg-base-100 rounded-full transition-all ease-out hover:scale-105"
+      class="mr-2 shadow-lg sm:mr-5 border border-base-200 px-3 bg-base-100 rounded-full transition-all ease-out hover:scale-105"
     >
       <a
-        class="flex items-center w-full h-full"
+         class="flex items-center w-full h-full"
         hreflang={language}
         href={href}
         rel="prefetch"
@@ -56,6 +56,8 @@ if (language === "es") languages = languages.reverse()
     </button>
 
     <button
+      onclick="switchTheme()"
+      id="theme-toggle"
       aria-label="Theme Switcher"
       class="shadow-lg text-lg flex items-center space-x-2 px-3 py-2 border border-base-300 rounded-full bg-base-100 transition-all ease-out hover:scale-105"
       data-toggle-theme="catppuccin-mocha,winter"
@@ -65,3 +67,12 @@ if (language === "es") languages = languages.reverse()
     </button>
   </div>
 </section>
+
+<script is:inline>
+  function switchTheme() {
+    const currentTheme = localStorage.getItem("theme") ?? "catppuccin-mocha"
+    const nextTheme = currentTheme === "catppuccin-mocha" ? "winter" : "catppuccin-mocha"
+    document.documentElement.setAttribute("data-theme", nextTheme)
+    localStorage.setItem("theme", nextTheme)
+  }
+</script>

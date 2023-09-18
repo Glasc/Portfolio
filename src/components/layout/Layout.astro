@@ -15,14 +15,12 @@ const { lang } = Astro.props
 ---
 
 <!DOCTYPE html>
-<html lang={lang} class="dark">
+<html lang={lang}>
   <head>
     <DaisySetup />
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body class="min-h-screen w-full">
-    <div class="max-w-3xl px-5 py-8 h-full w-full mx-auto">
+  <body class="min-h-screen w-full px-5 py-8 ">
       <slot />
-    </div>
   </body>
 </html>

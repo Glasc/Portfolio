@@ -20,7 +20,6 @@ export function getStaticPaths() {
     },
   ]
 }
-
 export type Params = {
   slug: "en" | "es"
 }
@@ -29,13 +28,12 @@ const { slug } = Astro.params as Params
 
 const projects = await getCollection(`${slug}-projects`)
 const introducing = await getEntryBySlug(`${slug}-introducing`, "introducing")
-
 export type Introducing = typeof introducing
 export type Projects = typeof projects
 ---
 
 <Layout lang={slug}>
-  <header>
+  <header class="max-w-3xl w-full mx-auto">
     <Profile />
     <Navbar />
   </header>

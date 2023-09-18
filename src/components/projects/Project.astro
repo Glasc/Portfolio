@@ -15,12 +15,12 @@ const props = Astro.props
     target="_blank"
   >
     <Image
-      class="w-full sm:max-w-[14rem] object-cover rounded-md"
+      class="w-full sm:max-w-[18rem] object-cover rounded-md"
       src={props.data.cover as ImageMetadata}
       alt={props.data.coverAlt}
       format="avif"
-      width={500}
-      height={500}
+      width={700}
+      height={700}
     />
     <section class="flex w-full p-6 flex-col h-full justify-between">
       <div>
@@ -29,7 +29,9 @@ const props = Astro.props
         >
           {props.data.title}
         </h3>
-        <p class="text-base-content/90 mt-1 text-justify leading-relaxed">
+        <p
+          class="text-base-content/90 mt-1 leading-relaxed"
+        >
           {props.body}
         </p>
       </div>
