@@ -1,5 +1,4 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
 
 export interface Props {
   title: string
@@ -36,5 +35,4 @@ const { title, description } = Astro.props
 
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<ViewTransitions fallback="animate"/>
   
