@@ -1,0 +1,46 @@
+---
+import type { Params } from "../pages/[...slug].astro"
+import TechIcon from "./TechIcon.astro"
+
+const { slug: language } = Astro.params as Params
+let heading = language === "en" ? "Technologies" : "Tecnologías"
+---
+
+<h2
+  class="text-2xl font-bold mt-5 text-neutral text-center sm:text-left max-w-3xl mx-auto"
+>
+  {heading}
+</h2>
+
+<div
+  class="flex flex-wrap gap-x-4 gap-y-2 justify-center sm:justify-between mt-4"
+>
+  <TechIcon
+    className="text-red-400 duration-400 ease-in-out"
+    title="HTML"
+    name="mdi:language-html5"
+  />
+  <TechIcon className="text-blue-400" title="CSS" name="mdi:language-css3" />
+  <TechIcon
+    className="text-cyan-400"
+    title="Tailwind CSS"
+    name="mdi:tailwind"
+  />
+  <TechIcon
+    className="text-yellow-400"
+    title="JavaScript"
+    name="mdi:language-javascript"
+  />
+  <TechIcon
+    className="text-blue-400"
+    title="TypeScript"
+    name="mdi:language-typescript"
+  />
+  <TechIcon className="text-blue-400" title="React" name="mdi:react" />
+  <TechIcon
+    className="text-base-content"
+    title="Astro.build"
+    name="simple-icons:astro"
+  />
+  <TechIcon className="text-orange-400" title="Git" name="mdi:git" />
+</div>

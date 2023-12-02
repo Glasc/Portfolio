@@ -60,8 +60,8 @@ const { slug } = Astro.params as Params
 const links = linksByLanguage[slug]
 ---
 
-<nav class="flex justify-between items-center">
+<nav class="flex justify-center sm:justify-between items-center">
   <nav class="mt-2 flex space-x-3">
     {links.map((link) => <NavbarLink {...link}>{link.label}</NavbarLink>)}
-  </nav>
+  </nav>  
 </nav>

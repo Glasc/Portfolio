@@ -7,7 +7,7 @@ const props = Astro.props
 ---
 
 <li
-  class="shadow-lg w-full border-primary/20 bg-base-100 rounded-2xl cursor-pointer hover:border-accent/50 transition-all duration-300 transform-gpu hover:-translate-y-1 ease-out group overflow-hidden opacity-0"
+  class="shadow border-base-100 w-full border-primary/20 bg-base-100 rounded-2xl cursor-pointer hover:border-accent/50 transition-transform duration-300 transform-gpu hover:-translate-y-1 group overflow-hidden opacity-0"
 >
   <a
     href={props.data.link}
@@ -29,9 +29,7 @@ const props = Astro.props
         >
           {props.data.title}
         </h3>
-        <p
-          class="text-base-content/90 mt-1 leading-relaxed"
-        >
+        <p class="text-base-content/90 mt-1 leading-relaxed">
           {props.body}
         </p>
       </div>

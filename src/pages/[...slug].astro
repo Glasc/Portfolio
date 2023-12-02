@@ -5,6 +5,7 @@ import Navbar from "../components/navbar/Navbar.astro"
 import Profile from "../components/Profile.astro"
 import Projects from "../components/projects/Projects.astro"
 import { getEntryBySlug, getCollection } from "astro:content"
+import Technologies from "../components/Technologies.astro"
 
 export function getStaticPaths() {
   return [
@@ -28,8 +29,8 @@ const { slug } = Astro.params as Params
 
 const projects = await getCollection(`${slug}-projects`)
 const introducing = await getEntryBySlug(`${slug}-introducing`, "introducing")
-export type Introducing = typeof introducing
-export type Projects = typeof projects
+// export type Introducing = typeof introducing
+// export type Projects = typeof projects
 ---
 
 <Layout lang={slug}>
@@ -38,5 +39,8 @@ export type Projects = typeof projects
     <Navbar />
   </header>
   <AboutMe introducing={introducing} />
-  <Projects projects={projects} />
+  <main class="max-w-3xl w-full mx-auto">
+    <Technologies />
+    <Projects projects={projects} />
+  </main>
 </Layout>
