@@ -7,7 +7,7 @@ const props = Astro.props
 ---
 
 <li
-  class="shadow w-full bg-base-200 rounded-2xl cursor-pointer hover:border-accent/50 transition-transform duration-300 transform-gpu hover:-translate-y-1 group overflow-hidden opacity-0"
+  class="shadow w-full bg-gradient-to-r from-base-100 to-base-200 rounded-2xl cursor-pointer hover:border-accent/50 transition-transform duration-300 transform-gpu hover:-translate-y-1 group overflow-hidden opacity-0"
 >
   <a
     href={props.data.link}
@@ -25,7 +25,7 @@ const props = Astro.props
     <section class="flex w-full p-6 flex-col h-full justify-between">
       <div>
         <h3
-          class="text-base-content group-hover:text-accent font-bold uppercase text-xl"
+          class="text-base-content transition-colors duration-300 group-hover:text-accent font-bold uppercase text-xl"
         >
           {props.data.title}
         </h3>
@@ -37,7 +37,7 @@ const props = Astro.props
         {
           props.data.technologies.split(",").map((technology) => {
             return (
-              <span class="badge badge-primary badge-outline group-hover:text-accent group-hover:font-medium">
+              <span class="badge badge-primary transition-colors duration-300 badge-outline group-hover:text-accent group-hover:font-medium">
                 {technology}
               </span>
             )
