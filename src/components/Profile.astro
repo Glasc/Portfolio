@@ -41,14 +41,14 @@ if (language === "es") languages = languages.reverse()
       class="mr-2 shadow sm:mr-5 border border-base-200 px-3 bg-base-100 rounded-full transition-all ease-out hover:scale-105"
     >
       <a
-         class="flex items-center w-full h-full"
+        class="flex items-center w-full h-full"
         hreflang={language}
         href={href}
         rel="prefetch"
       >
         <Icon class="inline-block sm:mr-1" name="ri:global-line" size={20} />
         <div class="justify-between space-x-1 sm:flex hidden font-medium">
-          <span class="text-neutral font-semibold">{languages[0]}</span>
+          <span class="text-base-content font-semibold">{languages[0]}</span>
           <span class="text-gray-400">|</span>
           <span class="text-base-content/70">{languages[1]}</span>
         </div>
@@ -60,7 +60,7 @@ if (language === "es") languages = languages.reverse()
       id="theme-toggle"
       aria-label="Theme Switcher"
       class="shadow text-lg flex items-center space-x-2 px-3 py-2 border border-base-300 rounded-full bg-base-100 transition-all ease-out hover:scale-105"
-      data-toggle-theme="catppuccin-mocha,winter"
+      data-toggle-theme="sunset,winter"
       data-act-class="ACTIVECLASS"
     >
       <Icon size="23" name="ri:sun-fill" />
@@ -70,8 +70,9 @@ if (language === "es") languages = languages.reverse()
 
 <script is:inline>
   function switchTheme() {
-    const currentTheme = localStorage.getItem("theme") ?? "catppuccin-mocha"
-    const nextTheme = currentTheme === "catppuccin-mocha" ? "winter" : "catppuccin-mocha"
+    const currentTheme = localStorage.getItem("theme") ?? "sunset"
+    const nextTheme =
+      currentTheme === "sunset" ? "winter" : "sunset"
     document.documentElement.setAttribute("data-theme", nextTheme)
     localStorage.setItem("theme", nextTheme)
   }

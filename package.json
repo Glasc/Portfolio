@@ -20,7 +20,7 @@
   "devDependencies": {
     "@iconify-json/ri": "^1.1.5",
     "@svgr/core": "^6.5.1",
-    "daisyui": "2.51.3",
+    "daisyui": "4.4.19",
     "prettier": "^2.8.4",
     "prettier-plugin-tailwindcss": "^0.2.5"
   },

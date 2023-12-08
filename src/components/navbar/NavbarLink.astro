@@ -17,7 +17,7 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "")
   target={isExternal ? "_blank" : "_self"}
   class:list={[
     className,
-    "flex items-center text-accent hover:underline",
+    "flex items-center link link-accent  hover:underline",
     { active: isActive },
   ]}
   {...props}

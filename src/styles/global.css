@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root[data-theme="catppuccin-mocha"] {
+:root[data-theme="sunset"] {
   color-scheme: dark;
 }
 
@@ -25,5 +25,5 @@ body {
   overflow-wrap: break-word;
   line-height: 1.5;
   font-family: "Hanken Grotesk", "Helvetica Neue", sans-serif;
-  @apply bg-gradient-to-b from-primary/5 via-base-200 to-base-300;
+  @apply bg-base-100;
 }
