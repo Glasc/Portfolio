@@ -7,21 +7,13 @@ const props = Astro.props
 ---
 
 <li
-  class="shadow w-full bg-base-200 sm:bg-gradient-to-r from-base-100 to-base-200 rounded-2xl cursor-pointer hover:border-accent/50 transition-transform duration-300 transform-gpu hover:-translate-y-1 group overflow-hidden opacity-0"
+  class="shadow w-full border dark:border-gray-800 border-gray-300 rounded cursor-pointer hover:border-accent/50 transition-transform duration-300 transform-gpu hover:-translate-y-1 group overflow-hidden opacity-0"
 >
   <a
     href={props.data.link}
     class="flex flex-col sm:flex-row sm:space-x-5"
     target="_blank"
   >
-    <Image
-      class="w-full sm:max-w-[18rem] object-cover rounded-md"
-      src={props.data.cover as ImageMetadata}
-      alt={props.data.coverAlt}
-      format="avif"
-      width={700}
-      height={700}
-    />
     <section class="flex w-full p-6 flex-col h-full justify-between">
       <div>
         <h3
@@ -29,7 +21,9 @@ const props = Astro.props
         >
           {props.data.title}
         </h3>
-        <p class="text-base-content/90 mt-1 leading-relaxed">
+        <p
+          class="text-base-content/90 dark:text-base-content/70 font-medium mt-1 leading-relaxed"
+        >
           {props.body}
         </p>
       </div>
@@ -45,6 +39,14 @@ const props = Astro.props
         }
       </div>
     </section>
+    <Image
+      class="w-full sm:max-w-[18rem] object-cover rounded-r-md"
+      src={props.data.cover as ImageMetadata}
+      alt={props.data.coverAlt}
+      format="avif"
+      width={700}
+      height={700}
+    />
   </a>
 </li>
 

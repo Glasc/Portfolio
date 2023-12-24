@@ -29,8 +29,9 @@ const { slug } = Astro.params as Params
 
 const projects = await getCollection(`${slug}-projects`)
 const introducing = await getEntryBySlug(`${slug}-introducing`, "introducing")
-// export type Introducing = typeof introducing
-// export type Projects = typeof projects
+export type Introducing = typeof introducing
+export type Projects = typeof projects
+
 ---
 
 <Layout lang={slug}>
