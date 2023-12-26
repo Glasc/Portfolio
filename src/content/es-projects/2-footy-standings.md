@@ -1,7 +1,7 @@
 ---
 title: "Football Leagues"
 technologies: "Typescript, NextJS, Shadcn, Redis, TRPC"
-cover: "~/assets/footy-standings-showcase.png"
+cover: "../footy-standings-showcase.png"
 coverAlt: "Footy standings showcase"
 link: "https://footy-standings.vercel.app/eng.1/2023"
 ---

@@ -27,3 +27,27 @@ body {
   font-family: "Hanken Grotesk", "Helvetica Neue", sans-serif;
   @apply bg-base-100;
 }
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  inset-inline-end: 0;
+  width: 6.25rem;
+  height: 6.25rem;
+  border-radius: 100%;
+  filter: blur(3.25rem);
+  opacity: 0.23;
+  transition: all ease 300ms;
+}
+
+.project-card:hover::before {
+  @apply bg-accent;
+}
+
+.project-card:focus-within::before {
+  @apply bg-primary;
+  opacity: 0.23;
+}
+

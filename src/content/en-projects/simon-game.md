@@ -1,7 +1,7 @@
 ---
 title: "Simon game"
 technologies: "HTML, CSS, Javascript"
-cover: "~/assets/simon-showcase.png"
+cover: "../simon-showcase.png"
 coverAlt: "Simon game showcase"
 link: "https://glasc.github.io/Simon-Game-Funes/"
 ---

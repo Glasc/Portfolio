@@ -1,7 +1,7 @@
 ---
 title: "Premier League standings"
 technologies: "Typescript, Astro, Shadcn, Redis"
-cover: "~/assets/epl-leaderboard.png"
+cover: "../epl-leaderboard.png"
 coverAlt: "Premier League leaderboard showcase"
 link: "https://pl-standings.vercel.app"
 ---
