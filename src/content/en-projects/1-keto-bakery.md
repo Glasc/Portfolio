@@ -5,4 +5,5 @@ cover: "~/assets/keto-showcase.png"
 coverAlt: "Keto Bakery showcase"
 link: "https://preview-keto-bakery.vercel.app/"
 ---
-Graduation project for a coffee shop in Puerto Vallarta. Contains a Content Management System (CMS) for products and blog.
+
+Implemented a website with a blog and content management system using Sanity.io. Applied static site generation for improved performance and SEO. Optimized website performance with server-side image optimization. Implemented webhooks for real-time updates and synchronization.

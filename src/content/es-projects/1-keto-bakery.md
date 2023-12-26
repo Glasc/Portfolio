@@ -5,4 +5,5 @@ cover: "~/assets/keto-showcase.png"
 coverAlt: "Keto Bakery showcase"
 link: "https://preview-keto-bakery.vercel.app/"
 ---
-Proyecto de residencia para la cafetería Keto Bakery & Coffee de Puerto Vallarta. Contiene un sistema de gestión de contenido (CMS) para los productos y un blog.
+
+Implementé un sitio web con un blog y un sistema de gestión de contenido utilizando Sanity.io. Apliqué la generación de sitios estáticos para mejorar el rendimiento y el SEO. Optimicé el rendimiento del sitio web con la optimización de imágenes del lado del servidor. Implementé webhooks para actualizaciones en tiempo real y sincronización.
