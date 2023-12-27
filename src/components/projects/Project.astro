@@ -8,7 +8,7 @@ const { Content } = await props.render();
 ---
 
 <li
-  class="project-card shadow-sm relative w-full border dark:border-gray-800 border-gray-300 rounded cursor-pointer hover:border-accent/50 transition-colors duration-300 transform-gpu group overflow-hidden opacity-0"
+  class="project-ccard shadow relative w-full border dark:border-gray-800 border-gray-300 rounded cursor-pointer hover:border-accent/50 dark:hover:border-accent/50 transition-colors duration-300 transform-gpu group overflow-hidden opacity-0"
 >
   <a
     href={props.data.link}
@@ -18,12 +18,12 @@ const { Content } = await props.render();
     <section class="flex w-full p-6 flex-col h-full justify-between">
       <div>
         <h3
-          class="text-base-content transition-colors duration-300 group-hover:text-accent font-bold uppercase text-xl"
+          class="text-base-content inline-block transition-colors duration-300 group-hover:text-accent font-bold uppercase text-xl project-title"
         >
           {props.data.title}
         </h3>
         <p
-          class="text-base-content/90 dark:text-base-content/70 font-medium mt-1 leading-relaxed"
+          class="text-base-content/90 dark:text-base-content/70 font-medium mt-3 leading-relaxed"
         >
           <Content />
         </p>
@@ -52,7 +52,7 @@ const { Content } = await props.render();
 </li>
 
 <script>
-  const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       const hasLoaded = entry.target.classList.contains("loaded")
       if (entry.isIntersecting || hasLoaded) {
@@ -71,4 +71,5 @@ const { Content } = await props.render();
   hiddenElements.forEach((element) => {
     observer.observe(element)
   })
+
 </script>

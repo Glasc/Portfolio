@@ -18,6 +18,10 @@ body {
   width: 100%;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   margin: auto;
   text-align: left;
@@ -41,13 +45,3 @@ body {
   opacity: 0.23;
   transition: all ease 300ms;
 }
-
-.project-card:hover::before {
-  @apply bg-accent;
-}
-
-.project-card:focus-within::before {
-  @apply bg-primary;
-  opacity: 0.23;
-}
-

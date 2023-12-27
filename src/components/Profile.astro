@@ -1,9 +1,9 @@
 ---
-import avatar from "../assets/avatar-cut.png"
 import { SITE_TITLE } from "../consts"
 import { Icon } from "astro-icon"
 import { Image } from "astro:assets"
 import type { Params } from "../pages/[...slug].astro"
+import avatar from "../assets/avatar-cut.png"
 
 const languageChanger = {
   en: {
@@ -29,6 +29,7 @@ if (language === "es") languages = languages.reverse()
       alt="My as a notion avatar"
       width={70}
       height={70}
+      format="avif"
       quality="high"
     />
     <h2 class="text-lg sm:text-xl font-semibold">
@@ -44,7 +45,6 @@ if (language === "es") languages = languages.reverse()
         class="flex items-center w-full h-full"
         hreflang={language}
         href={href}
-        rel="prefetch"
       >
         <Icon class="inline-block sm:mr-1" name="ri:global-line" size={20} />
         <div class="justify-between space-x-1 sm:flex hidden font-medium">
@@ -56,7 +56,7 @@ if (language === "es") languages = languages.reverse()
     </button>
 
     <button
-      onclick="switchTheme()"
+      data-theme-switcher
       id="theme-toggle"
       aria-label="Theme Switcher"
       class="btn shadow-sm dark:border-gray-800 border-gray-300 text-lg flex items-center space-x-2 px-3 py-2 rounded-full transition-transform ease-out hover:scale-105 hover:bg-base-200"
@@ -68,11 +68,18 @@ if (language === "es") languages = languages.reverse()
   </div>
 </section>
 
-<script is:inline>
+<script>
+  import { updateNotationColor } from "../utils"
+  const themeToggle = document?.querySelector("[data-theme-switcher]")
+  
+  updateNotationColor()
   function switchTheme() {
     const currentTheme = localStorage.getItem("theme") ?? "sunset"
     const nextTheme = currentTheme === "sunset" ? "winter" : "sunset"
     document.documentElement.setAttribute("data-theme", nextTheme)
     localStorage.setItem("theme", nextTheme)
+    updateNotationColor()
   }
+
+  themeToggle?.addEventListener("click", switchTheme)
 </script>
