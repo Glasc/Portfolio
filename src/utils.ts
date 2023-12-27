@@ -14,7 +14,7 @@ export const updateNotationColor = () => {
       color = "rgba(203,166,247,0.5)"
       break
     case "winter":
-      color = "rgba(193,72,172,0.6)"
+      color = "rgba(193,72,172,0.4)"
       break
     default:
       color = "rgba(203,166,247,0.5)"
@@ -26,7 +26,7 @@ export const updateNotationColor = () => {
     const annotation = annotate(title, {
       type: "underline",
       color,
-      padding: 3,
+      padding: 2,
     })
 
     const showAnnotation = () => {
