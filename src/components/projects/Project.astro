@@ -12,19 +12,19 @@ const { Content } = await props.render();
 >
   <a
     href={props.data.link}
-    class="flex flex-col-reverse  sm:flex-row sm:space-x-5 select-text"
+    class="flex flex-col-reverse sm:flex-row sm:space-x-5 select-text"
     target="_blank"
     draggable="false"
   >
-    <section class="flex  w-full p-6 flex-col h-full justify-between">
+    <section class="flex w-full p-6 flex-col h-full justify-between">
       <div>
         <h3
-          class="text-base-content inline-block transition-colors duration-300 group-hover:text-accent font-bold uppercase text-xl project-title"
+          class="text-base-content inline-block transition-colors duration-300 group-hover:text-accent font-semibold uppercase text-xl project-title"
         >
           {props.data.title}
         </h3>
         <div
-          class="text-base-content/90 dark:text-base-content/70  font-medium mt-3 leading-relaxed"
+          class="text-base-content/90 dark:text-base-content/70 font-medium mt-2 leading-relaxed"
         >
           <Content />
         </div>
@@ -33,7 +33,7 @@ const { Content } = await props.render();
         {
           props.data.technologies.split(",").map((technology) => {
             return (
-              <span class="badge badge-primary transition-colors duration-300 badge-outline group-hover:text-accent  group-hover:font-medium group-focus:text-primary">
+              <span class="badge badge-primary transition-colors duration-300 badge-outline group-hover:text-accent group-hover:font-medium group-focus:text-primary">
                 {technology}
               </span>
             )
