@@ -35,12 +35,12 @@ export type Projects = typeof projects
 ---
 
 <Layout lang={slug}>
-  <header class="max-w-3xl w-full mx-auto">
+  <header class="max-w-3xl w-full z-10 mx-auto">
     <Profile />
     <Navbar />
   </header>
   <AboutMe introducing={introducing} />
-  <main class="max-w-3xl w-full mx-auto">
+  <main class="max-w-3xl w-full z-10 mx-auto">
     <Technologies />
     <Projects projects={projects} />
   </main>

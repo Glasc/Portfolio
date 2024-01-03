@@ -29,7 +29,7 @@ body {
   overflow-wrap: break-word;
   line-height: 1.5;
   font-family: "Hanken Grotesk", "Helvetica Neue", sans-serif;
-  @apply bg-base-100;
+  @apply bg-base-200;
 }
 
 .project-card::before {

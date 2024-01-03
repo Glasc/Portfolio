@@ -8,7 +8,7 @@ const { Content } = await props.render();
 ---
 
 <li
-  class="project-ccard shadow relative w-full border dark:border-gray-800 border-gray-300 rounded cursor-pointer hover:border-accent/50 dark:hover:border-accent/50 transition-colors duration-300 transform-gpu group overflow-hidden opacity-0"
+  class="project-ccard shadow relative w-full border dark:border-gray-800 border-gray-300 rounded cursor-pointer hover:border-accent/50 dark:hover:border-accent/50 transition-colors duration-300 transform-gpu group overflow-hidden"
 >
   <a
     href={props.data.link}
@@ -51,26 +51,3 @@ const { Content } = await props.render();
     />
   </a>
 </li>
-
-<script>
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      const hasLoaded = entry.target.classList.contains("loaded")
-      if (entry.isIntersecting || hasLoaded) {
-        entry.target.classList.remove("opacity-0")
-        entry.target.classList.add("loaded")
-      } else {
-        entry.target.classList.add("opacity-0")
-      }
-    })
-  })
-
-  const hiddenElements = document.querySelectorAll(
-    ".opacity-0"
-  ) as NodeListOf<HTMLLIElement>
-
-  hiddenElements.forEach((element) => {
-    observer.observe(element)
-  })
-
-</script>
